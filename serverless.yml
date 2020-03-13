@@ -12,6 +12,8 @@
 # Happy Coding!
 
 service: wut-up-world
+plugins: 
+  - serverless-offline  # anywhere we can write this
 # app and org for use with dashboard.serverless.com
 #app: your-app-name
 #org: your-org-name
@@ -62,10 +64,10 @@ functions:
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
-#    events:
-#      - http:
-#          path: users/create
-#          method: get
+    events:
+      - http:
+          path: user/{name}
+          method: get
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
